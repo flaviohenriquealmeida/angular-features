@@ -1,0 +1,50 @@
+<p class="text-info">{{mensagem}}</p>
+<div class="hidden-print">
+	<bs-painel titulo="Funcionário">
+		<form name="form" ng-submit="salva(funcionario)">
+			<div class="form-group">
+				<label for="nome">Nome completo</label>
+				<input type="text" class="form-control" id="nome" name="nome" autofocus required ng-model="funcionario.nome">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<span class="input-group-addon">@</span>
+					<input type="email" class="form-control" id="email" placeholder="email@exemplo.com" name="email" 
+					ng-model="funcionario.email" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="telefone">Telefone</label>
+				<input type="text" class="form-control" id="telefone" name="telefone" ng-model="funcionario.telefone">
+			</div>
+
+			<div class="form-group">
+				<label for="salario">Salário</label>
+				<input real type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
+			</div>
+			<input type="submit" class="btn btn-primary" value="Salvar">
+			<a ng-href="#/" class="btn btn-primary">Voltar</a>
+		</bs-painel>
+	</form>
+</div>
+</br>
+<div class="jumbotron">
+	<h2>Credenciais</h2>
+	<div class="row">
+		<dl class="dl-horizontal col-md-8">
+			<dt>Nome</dt>
+			<dd>{{funcionario.nome}}</dd>
+			<dt>Email</dt>
+			<dd>{{funcionario.email}}</dd>
+			<dt>Telefone</dt>
+			<dd>{{funcionario.telefone}}</dd>
+		</dl>
+		<figure class="col-md-4">
+			<img src="http://lorempixel.com/200/200" />
+		</figure>
+	</div>
+</div>
+

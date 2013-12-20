@@ -1,0 +1,47 @@
+<bs-painel titulo="Listagem">
+	<p class="text-info" ng-hide="funcionarios.length">
+		Não há funcionários cadastrados
+	</p>
+	<div class="table-responsive">
+		<table class="table table-hover">
+			
+			<thead>
+			<tr>
+				<th>NOME</th>
+				<th>E-MAIL</th>
+				<th>TELEFONE</th>
+				<th>SALÁRIO</th>
+				<th class="text-center">AÇÃO</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr ng-repeat="funcionario in funcionarios">
+				<td>
+					<a ng-href="#/funcionario/{{funcionario.id}}">
+						{{funcionario.nome}}
+					</a>
+				</td>
+				<td>{{funcionario.email}}</td>
+				<td>{{funcionario.telefone}}</td>
+				<td>{{funcionario.salario | currency}}</td>
+				<td class="text-center">
+					<button ng-click="remove(funcionario)" class="btn btn-warning">
+						Remover
+					</buttom>	
+				</td>
+			</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="text-right"><strong>Total</strong></td>
+					<td>{{total() | currency}}</td>
+				</tr>
+			</foot>
+			
+		</table>
+	</div>
+	<a ng-href="#/funcionario" class="btn btn-primary">Novo Funcionario</a>
+</bs-painel>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="funcionarios">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.css">
+		<style>
+			teste {
+				display: nome;
+			}
+		</style>
+	</head>
+
+	<body class="container">
+		<header>
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Sua Empresa</a>
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+						<span class="glyphicon glyphicon-align-justify"></span>
+					</button>
+				</div>
+				<ul class="nav navbar-nav collapse navbar-collapse">
+				</ul>
+			</nav>			
+		</header>
+		<div ng-view>
+		</div>
+		
+		<script src="../vendor/angular.js"></script>
+		<script src="../vendor/angular-route.js"></script>
+		<script src="../vendor/angular-resource.js"></script>
+		<script src="../vendor/angular-locale_pt-br.js"></script>
+		<script src="app.js"></script>
+		<script src="funcionario/FuncionariosController.js"></script>
+		<script src="funcionario/FuncionarioController.js"></script>
+		<script src="../common/resources/Funcionario.js"></script>
+		<script src="../common/directives/components.js"></script>		
+	</body>
+</html>
