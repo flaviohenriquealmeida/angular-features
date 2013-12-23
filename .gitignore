@@ -3,4 +3,6 @@
 
 .DS_Store
 .DS_Store?
+node_modules/
 /server/node_modules
+/src/vendor
