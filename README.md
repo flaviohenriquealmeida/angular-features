@@ -28,3 +28,7 @@ Finally, you can ask [bower](http://bower.io) to download our app dependencies. 
 
 ##How to run
 Run `grunt server` from `angular-features` folder and then type `http://localhost:3000/app` from your favorite browser.
+
+##TODO
+- automate tests
+- code cleanup
