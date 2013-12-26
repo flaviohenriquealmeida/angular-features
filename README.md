@@ -11,6 +11,7 @@ Angular Features is a very small CRUD project that shows what [Angularjs](http:/
 - locale handling
 - module creation
 - code organization
+- Karma test runner
 
 ##Pre-requisites
 
@@ -28,6 +29,9 @@ Finally, you can ask [bower](http://bower.io) to download our app dependencies. 
 
 ##How to run
 Run `grunt server` from `angular-features` folder and then type `http://localhost:3000/app` from your favorite browser.
+
+To run karma tests, inside `angular-features` folder run:
+./node_modules/karma/bin/karma start
 
 ##TODO
 - automate tests
