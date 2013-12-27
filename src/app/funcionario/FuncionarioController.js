@@ -4,12 +4,9 @@ angular.module('funcionarios').controller(
 
 		$scope.init = function() {
 
-			var funcionarioId = $routeParams.funcionarioId;
-			if(funcionarioId) {
-				$scope.funcionario = Funcionario.get({id: funcionarioId});
-			} else {
-				$scope.funcionario = new Funcionario;
-			}
+			$scope.funcionario = $routeParams.funcionarioId 
+				? Funcionario.get({id: $routeParams.funcionarioId}) 
+				: new Funcionario();
 		}
 		$scope.init();
 
