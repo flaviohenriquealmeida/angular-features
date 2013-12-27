@@ -1,4 +1,4 @@
-angular.module('funcionarios', ['ngRoute', 'recursos', 'components']).config(function($routeProvider) {
+angular.module('funcionarios', ['ngRoute', 'ngAnimate', 'recursos', 'components']).config(function($routeProvider) {
     $routeProvider.when('/', 
     	{
     		templateUrl: 'funcionario/funcionarios.tpl.html',

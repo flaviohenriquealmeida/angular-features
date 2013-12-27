@@ -3,7 +3,7 @@
 		Não há funcionários cadastrados
 	</p>
 
-	<input ng-model="searchText" placeholder="filtre sua pesquisa">
+	<input ng-model="search.text" placeholder="filtre sua pesquisa">
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<thead>
@@ -17,7 +17,7 @@
 			</thead>
 
 			<tbody>
-			<tr ng-repeat="funcionario in funcionarios | filter:searchText">
+			<tr ng-repeat="funcionario in funcionarios | filter:search.text" class="repeat-item">
 				<td>
 					<a ng-href="#/funcionario/{{funcionario.id}}">
 						{{funcionario.nome}}
