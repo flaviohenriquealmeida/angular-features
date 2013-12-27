@@ -4,7 +4,7 @@
   "description": "",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "author": "",
   "license": "BSD-2-Clause",
