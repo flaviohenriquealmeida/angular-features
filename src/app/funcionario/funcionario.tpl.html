@@ -1,6 +1,6 @@
 <p class="text-info">{{mensagem}}</p>
 <div class="hidden-print">
-	<bs-painel titulo="Funcionário">
+	<my-panel my-title="Funcionário">
 		<form name="form" ng-submit="salva(funcionario)">
 			<div class="form-group">
 				<label for="nome">Nome completo</label>
@@ -23,11 +23,11 @@
 
 			<div class="form-group">
 				<label for="salario">Salário</label>
-				<input real type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
+				<input my-currency type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
 			</div>
 			<input type="submit" class="btn btn-primary" value="Salvar">
 			<a ng-href="#/" class="btn btn-primary">Voltar</a>
-		</bs-painel>
+		</my-panel>
 	</form>
 </div>
 </br>
