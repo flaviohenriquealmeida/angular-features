@@ -1,4 +1,5 @@
-#Angular Features
+
+#Angular Features [![Build Status](https://travis-ci.org/flaviohenriquealmeida/angular-features.png?branch=master)](https://travis-ci.org/flaviohenriquealmeida/angular-features)
 
 Angular Features is a very small CRUD project that shows what [Angularjs](http://angularjs.org/) is capable of. You can in the app:
 
