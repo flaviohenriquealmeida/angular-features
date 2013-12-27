@@ -9,3 +9,4 @@ before_install:
   - npm install -g karma
   - cd src
   - bower install
+  - cd ..
