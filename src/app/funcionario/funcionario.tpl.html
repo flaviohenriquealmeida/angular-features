@@ -6,6 +6,8 @@
 				<label for="nome">Nome completo</label>
 				<input type="text" class="form-control" id="nome" name="nome" autofocus required ng-model="funcionario.nome"
 				ng-minlength='4' ng-maxlength='30'>
+				<span ng-show='addFuncionarioForm.nome.$error.required'>Nome deve ser preenchido</span>
+				<span ng-show='addFuncionarioForm.nome.$error.minlength'>Nome deve ter no mínimo 4 caracteres</span>
 			</div>
 
 			<div class="form-group">
@@ -14,6 +16,13 @@
 					<span class="input-group-addon">@</span>
 					<input type="email" class="form-control" id="email" placeholder="email@exemplo.com" name="email" 
 					ng-model="funcionario.email" required>
+					<ul>
+						<li ng-show='addFuncionarioForm.email.$error.required'>E-mail 	deve ser preenchido
+						</li>
+						<li ng-show='addFuncionarioForm.email.$invalid'>
+							E-mail inválido
+						</li>
+					<ul>
 				</div>
 			</div>
 
@@ -25,6 +34,7 @@
 			<div class="form-group">
 				<label for="salario">Salário</label>
 				<input my-currency type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
+				<span ng-show='addFuncionarioForm.salario.$error.currency'>Salário Inválido</span>
 			</div>
 			<input type="submit" class="btn btn-primary" value="Salvar"
 			ng-disabled='!addFuncionarioForm.$valid'>

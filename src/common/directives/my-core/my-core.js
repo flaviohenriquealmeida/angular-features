@@ -6,22 +6,23 @@ angular.module('myCore', []).directive('myCurrency', function($filter) {
 	  require: 'ngModel',
 	  link: function(scope, element, attrs, ctr) {
 	  	
-	    ctr.$parsers.push(function(data) {
-	    	if(data) {
-	    		if(exp.test(data)) {
+	    ctr.$parsers.push(function(viewValue) {
+	    	if(viewValue) {
+	    		if(exp.test(viewValue)) {
 	    			ctr.$setValidity('currency', true);
 	    			// escaped \.
-	    			return parseFloat(data.replace(/\./g, '').replace(/,/g,'.'));
+	    			return parseFloat(viewValue.replace(/\./g, '').replace(/,/g,'.'));
 	    		} else {
 	    			ctr.$setValidity('currency', false);
+	    			return undefined;
 	    		}
 	    	} else {
 	    		return 0.00;
 	    	}
 	    });
 
-	    ctr.$formatters.push(function(data) {
-	    	return $filter('currency')(data, '');
+	    ctr.$formatters.push(function(modelValue) {
+	    	return $filter('currency')(modelValue, '');
 	    });
 	  }
 	}
