@@ -10,6 +10,9 @@
 		.ng-invalid {
 			color: red;
 		}
+		.navbar .glyphicon {
+			color: grey;
+		}
 		</style>
 	</head>
 
@@ -24,7 +27,7 @@
 		</header>
 		<div ng-view>
 		</div>
-		
+		<script src="../vendor/jquery/jquery.min.js"></script>
 		<script src="../vendor/angular/angular.min.js"></script>
 		<script src="../vendor/angular-route/angular-route.min.js"></script>
 		<script src="../vendor/angular-resource/angular-resource.min.js"></script>
@@ -35,6 +38,9 @@
 		<script src="funcionario/FuncionarioController.js"></script>
 		<script src="../common/resources/Funcionario.js"></script>
 		<script src="../common/directives/my-core/my-core.js"></script>	
-		<script src="../common/directives/my-ui/my-ui.js"></script>		
+		<script src="../common/directives/my-ui/my-ui.js"></script>	
+		
+		<script src="../vendor/bootstrap/js/collapse.js"></script>		
+		<script src="../vendor/bootstrap/js/transition.js"></script>		
 	</body>
 </html>
