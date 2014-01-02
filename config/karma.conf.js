@@ -14,16 +14,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    'src/vendor/angular/angular.js',
-    'src/vendor/angular-mocks/angular-mocks.js',
-    'src/vendor/angular-animate/angular-animate.js',
-    'src/vendor/angular-resource/angular-resource.js',
-    'src/vendor/angular-route/angular-route.js',
-    'src/app/app.js',
-    'src/app/funcionario/**/*.js',
-    'src/common/resources/**/*.js',
-    'src/common/directives/**/*.js',
-    'test/**/*Spec.js'
+    '../src/vendor/angular/angular.js',
+    '../src/vendor/angular-mocks/angular-mocks.js',
+    '../src/vendor/angular-animate/angular-animate.js',
+    '../src/vendor/angular-resource/angular-resource.js',
+    '../src/vendor/angular-route/angular-route.js',
+    '../src/app/app.js',
+    '../src/app/funcionario/**/*.js',
+    '../src/common/resources/**/*.js',
+    '../src/common/directives/**/*.js',
+    '../test/**/*Spec.js'
     ],
 
 
