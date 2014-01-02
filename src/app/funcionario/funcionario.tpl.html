@@ -1,10 +1,11 @@
 <p class="text-info">{{mensagem}}</p>
 <div class="hidden-print">
 	<my-panel my-title="Funcionário">
-		<form name="form" ng-submit="salva(funcionario)">
+		<form name="addFuncionarioForm" ng-submit="salva(funcionario)">
 			<div class="form-group">
 				<label for="nome">Nome completo</label>
-				<input type="text" class="form-control" id="nome" name="nome" autofocus required ng-model="funcionario.nome">
+				<input type="text" class="form-control" id="nome" name="nome" autofocus required ng-model="funcionario.nome"
+				ng-minlength='4' ng-maxlength='30'>
 			</div>
 
 			<div class="form-group">
@@ -25,7 +26,8 @@
 				<label for="salario">Salário</label>
 				<input my-currency type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
 			</div>
-			<input type="submit" class="btn btn-primary" value="Salvar">
+			<input type="submit" class="btn btn-primary" value="Salvar"
+			ng-disabled='!addFuncionarioForm.$valid'>
 			<a href="#/" class="btn btn-primary">Voltar</a>
 		</my-panel>
 	</form>

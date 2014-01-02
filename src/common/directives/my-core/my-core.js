@@ -1,19 +1,26 @@
 angular.module('myCore', []).directive('myCurrency', function($filter) {
+	
+	var exp = /^\s*(?:[1-9]\d{0,2}(?:\.\d{3})*|0)(?:,\d{1,2})?$/;
 
 	return {
 	  require: 'ngModel',
-	  link: function(scope, element, attrs, ngModel) {
+	  link: function(scope, element, attrs, ctr) {
 	  	
-	    ngModel.$parsers.push(function(data) {
+	    ctr.$parsers.push(function(data) {
 	    	if(data) {
-	    		return parseFloat(data.replace('.', '').replace(',','.'));
+	    		if(exp.test(data)) {
+	    			ctr.$setValidity('currency', true);
+	    			// escaped \.
+	    			return parseFloat(data.replace(/\./g, '').replace(/,/g,'.'));
+	    		} else {
+	    			ctr.$setValidity('currency', false);
+	    		}
 	    	} else {
 	    		return 0.00;
 	    	}
-	    	
 	    });
 
-	    ngModel.$formatters.push(function(data) {
+	    ctr.$formatters.push(function(data) {
 	    	return $filter('currency')(data, '');
 	    });
 	  }
@@ -26,13 +33,13 @@ angular.module('myCore', []).directive('myCurrency', function($filter) {
 	    scope:{
 	        myDate: '=ngModel'
 	    },
-	     link: function(scope, element, attrs, ngModelCtrl) {
+	     link: function(scope, element, attrs, ctr) {
 	     	
-	     	ngModelCtrl.$formatters.unshift(function(modelValue) {
+	     	ctr.$formatters.unshift(function(modelValue) {
 	     		return modelValue ? moment(modelValue).format(attrs.format) : "";
 	     	});
 
-	     	ngModelCtrl.$parsers.unshift(function(viewValue) {
+	     	ctr.$parsers.unshift(function(viewValue) {
 	     		var mDate = moment(viewValue, attrs.format);
 	     		return mDate.isValid() ? mDate.toDate(): undefined;
 	     	});
