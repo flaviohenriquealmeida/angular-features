@@ -19,13 +19,11 @@
 			<tbody>
 			<tr ng-repeat="funcionario in funcionarios | filter:search.text" class="repeat-item">
 				<td>
-					<a ng-href="#/funcionario/{{funcionario.id}}">
-						{{funcionario.nome}}
-					</a>
+					<a ng-href="#/funcionario/{{funcionario.id}}" ng-bind="funcionario.nome"></a>
 				</td>
-				<td>{{funcionario.email}}</td>
-				<td>{{funcionario.telefone}}</td>
-				<td>{{funcionario.salario | currency}}</td>
+				<td ng-bind="funcionario.email"></td>
+				<td ng-bind="funcionario.telefone"></td>
+				<td ng-bind="funcionario.salario | currency"></td>
 				<td class="text-center">
 					<button ng-click="remove(funcionario)" class="btn btn-warning">
 						Remover
@@ -38,7 +36,7 @@
 					<td></td>
 					<td></td>
 					<td class="text-right"><strong>Total</strong></td>
-					<td>{{total() | currency}}</td>
+					<td ng-bind="total() | currency"></td>
 				</tr>
 			</foot>
 			
