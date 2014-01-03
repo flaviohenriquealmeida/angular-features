@@ -1,53 +1,36 @@
 angular.module('funcionarios').controller('DestaquesController', function($scope, $http, $q) {
 
-	var funcionarios = [];
-	// callback hell
-	$http.get('/destaques/funcionarios').success(function(destaques) {
-		funcionarios.push.apply(funcionarios, destaques);
-
-		$http.get('/destaques/gerentes').success(function(destaques) {
-			funcionarios.push.apply(funcionarios, destaques);
-
-			$http.get('/destaques/diretores').success(function(destaques) {
-				funcionarios.push.apply(funcionarios, destaques);
-				$scope.funcionarios = funcionarios;
-				$scope.mensagem = 'A lista acima está atualizada';
-			}).error(function(error) {
-				console.error(error);
-			})
-		}).error(function(error) {
-			console.error(error);
-		});
-	}).error(function(error) {
-		console.error(error);
-	});
-});
-
-	/* ok 
-	function atual() {
+	function funcionarios() {
 		var defer = $q.defer();
-		$http.get('/destaques/atual').success(function(dados) {
-			defer.resolve(dados);
+		$http.get('/destaques/funcionarios').success(function(retorno) {
+			defer.resolve(retorno);
 		});
 		return defer.promise;
 	};
 
-	function anterior() {
+	function gerentes() {
 		var defer = $q.defer();
-		$http.get('/destaques/anterior').success(function(dados) {
-			defer.resolve(dados);
+		$http.get('/destaques/gerentes').success(function(retorno) {
+			defer.resolve(retorno);
 		});
 		return defer.promise;
 	};
 
-	$q.all([atual(), anterior()]).then(function(resultados) {
+	function diretores() {
+		var defer = $q.defer();
+		$http.get('/destaques/diretores').success(function(retorno) {
+			defer.resolve(retorno);
+		});
+		return defer.promise;
+	};
+
+	$q.all([funcionarios(), gerentes(), diretores()])
+	.then(function(resultados) {
 		$scope.funcionarios = [];
 		resultados.forEach(function(resultado) {
 			$scope.funcionarios.push.apply($scope.funcionarios, resultado);	
 		})
-		$scope.funcionarios.sort(function(a, b) {
-			return a.nome > b.nome;
-		});
-		
+	}, function(erro) {
+		console.erro(erro);
 	});
-	*/
+});
