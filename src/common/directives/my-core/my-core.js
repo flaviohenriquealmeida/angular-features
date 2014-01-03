@@ -42,7 +42,13 @@ angular.module('myCore', []).directive('myCurrency', function($filter) {
 
 	     	ctr.$parsers.unshift(function(viewValue) {
 	     		var mDate = moment(viewValue, attrs.format);
-	     		return mDate.isValid() ? mDate.toDate(): undefined;
+	     		if(mDate.isValid()) {
+	     			ctr.$setValidity('date', true);
+	     			return mDate.toDate();
+	     		} else {
+	     			ctr.$setValidity('date', false);
+	     			return undefined;
+	     		}
 	     	});
 	     }
 	 }

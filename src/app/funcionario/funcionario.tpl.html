@@ -36,6 +36,12 @@
 				<input my-currency type="text" min="0" step="any" class="form-control" id="salario" name="salario" required ng-model="funcionario.salario">
 				<span ng-show='addFuncionarioForm.salario.$dirty && addFuncionarioForm.salario.$error.currency'>Salário Inválido</span>
 			</div>
+			<div class="form-group">
+				<label for="admissao">Admissão</label>
+				<input my-date format="DD/MM/YYYY" type="text" class="form-control" id="salario" name="admissao" required ng-model="funcionario.admissao">
+				<span ng-show='addFuncionarioForm.admissao.$dirty && addFuncionarioForm.admissao.$error.date'>Data Inválida</span>
+			</div>
+
 			<div>
 			<button type="submit" class="btn btn-primary"
 			ng-disabled='!addFuncionarioForm.$valid'>

@@ -17,6 +17,7 @@
 				<th>E-MAIL</th>
 				<th>TELEFONE</th>
 				<th>SALÁRIO</th>
+				<th>ADMISSÃO</th>
 				<th class="text-center">AÇÃO</th>
 			</tr>
 			</thead>
@@ -29,6 +30,7 @@
 				<td ng-bind="funcionario.email"></td>
 				<td ng-bind="funcionario.telefone"></td>
 				<td ng-bind="funcionario.salario | currency"></td>
+				<td ng-bind="funcionario.admissao | date:'dd/MM/yyyy'"></td>
 				<td class="text-center">
 					<button ng-click="remove(funcionario)" class="btn btn-warning">
 						Remover

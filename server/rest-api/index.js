@@ -1,8 +1,8 @@
 var ID_FUNCIONARIO_INC = 3;
 var funcionarios = [
-	{id: 1, nome: 'Funcionário Exemplo 1', email: 'func1@empresa.com.br', telefone: '99999999', salario: 2500.00}, 
-	{id: 2, nome: 'Funcionário Exemplo 2', email: 'func2@empresa.com.br', telefone: '88888888', salario: 1500.00}, 
-	{id: 3, nome: 'Funcionário Exemplo 3', email: 'func3@empresa.com.br', telefone: '77777777', salario: 1000.00}
+	{id: 1, nome: 'Funcionário Exemplo 1', email: 'func1@empresa.com.br', telefone: '99999999', salario: 2500.00, admissao: new Date(2014, 0, 2)}, 
+	{id: 2, nome: 'Funcionário Exemplo 2', email: 'func2@empresa.com.br', telefone: '88888888', salario: 1500.00, admissao: new Date(2013, 11, 30)}, 
+	{id: 3, nome: 'Funcionário Exemplo 3', email: 'func3@empresa.com.br', telefone: '77777777', salario: 1000.00, admissao: new Date(2012, 4, 5)}
 ] 
 
 exports.listaFuncionarios = function(req, res) {
