@@ -1,6 +1,7 @@
+// take a look at DestaquesCallbakHellController to contrast with this solution using promises
 angular.module('funcionarios').controller('DestaquesController', function($scope, $http, $q) {
 
-	function funcionarios() {
+	function getFuncionarios() {
 		var defer = $q.defer();
 		$http.get('/destaques/funcionarios').success(function(retorno) {
 			defer.resolve(retorno);
@@ -8,7 +9,7 @@ angular.module('funcionarios').controller('DestaquesController', function($scope
 		return defer.promise;
 	};
 
-	function gerentes() {
+	function getGerentes() {
 		var defer = $q.defer();
 		$http.get('/destaques/gerentes').success(function(retorno) {
 			defer.resolve(retorno);
@@ -16,7 +17,7 @@ angular.module('funcionarios').controller('DestaquesController', function($scope
 		return defer.promise;
 	};
 
-	function diretores() {
+	function getDiretores() {
 		var defer = $q.defer();
 		$http.get('/destaques/diretores').success(function(retorno) {
 			defer.resolve(retorno);
@@ -24,7 +25,7 @@ angular.module('funcionarios').controller('DestaquesController', function($scope
 		return defer.promise;
 	};
 
-	$q.all([funcionarios(), gerentes(), diretores()])
+	$q.all([getFuncionarios(), getGerentes(), getDiretores()])
 	.then(function(resultados) {
 		$scope.funcionarios = [];
 		resultados.forEach(function(resultado) {
