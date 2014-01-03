@@ -22,6 +22,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/destaques/funcionarios', routes.listaFuncionariosDestaques);
+app.get('/destaques/gerentes', routes.listaGerentesDestaques);
+app.get('/destaques/diretores', routes.listaDiretoresDestaques);
 
 app.post('/funcionarios', api.salvaFuncionario);
 app.get('/funcionarios/:id', api.obtemFuncionario);

@@ -19,5 +19,13 @@ angular.module('funcionarios', ['ngRoute', 'ngAnimate', 'recursos', 'myCore', 'm
             controller: 'FuncionarioController'
         }
     );
+
+    $routeProvider.when('/destaques/', 
+        {
+            templateUrl: 'funcionario/destaques.tpl.html', 
+            controller: 'DestaquesController'
+        }
+    );
+
     $routeProvider.otherwise({redirectTo: '/'});
 });
