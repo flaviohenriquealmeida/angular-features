@@ -14,12 +14,12 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.6",
-    "angular-resource": "~1.2.6",
-    "angular-route": "~1.2.6",
-    "angular-i18n": "~1.2.6",
-    "angular-animate": "~1.2.6",
-    "angular-mocks": "~1.2.6",
+    "angular": "1.2.8",
+    "angular-resource": "1.2.8",
+    "angular-route": "1.2.8",
+    "angular-i18n": "1.2.8",
+    "angular-animate": "1.2.8",
+    "angular-mocks": "1.2.8",
     "bootstrap": "~3.0.3",
     "jquery": "~2.0.3",
     "momentjs": "~2.5.0"
