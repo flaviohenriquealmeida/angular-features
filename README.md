@@ -22,18 +22,19 @@ You need [Nodejs](nodejs.org) installed in order to run the server. The server d
 
 First, you need to download your server and app. I will be using [Grunt](http://gruntjs.com/) to startup our server and to tweak [bower](http://bower.io) dependencies download. Make sure [grunt-cli](https://github.com/gruntjs/grunt-cli) is in your path.
 
-Do a `npm install` for both angular-feaures and `angular-features/src` folders. This will bring our infrastructure dependencies to help startup the server and do some nice live reloading for us.
+Do a `npm install` in angular-feaures folder. This will bring our server infrastructure dependencies to help startup the server and do some nice livereloading for us.
 
 Finally, you can ask [bower](http://bower.io) to download our app dependencies. Inside `angular-features/src` do:
 
-`grunt bower:install`
+`bower install`
 
 ##How to run
 Run `grunt server` from `angular-features` folder and then type `http://localhost:3000/app` from your favorite browser.
 
 To run karma tests, inside `angular-features` folder run:
-./node_modules/karma/bin/karma start
+`sh scripts/test.sh`
 
 ##TODO
-- automate tests
-- code cleanup
+- increase test coverage
+- $cookieStorage example
+- 
