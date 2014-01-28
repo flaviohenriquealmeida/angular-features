@@ -1,7 +1,7 @@
 angular.module('funcionarios').controller(
 	'FuncionarioController', 
 	function($scope, $routeParams, Funcionario) {
-
+		
 		$scope.init = function() {
 
 			$scope.funcionario = $routeParams.funcionarioId 
@@ -14,6 +14,7 @@ angular.module('funcionarios').controller(
 			funcionario.$save().then(
 				function() {
 					$scope.mensagem = 'Salvo sucesso';
+					$scope.btnBackFocus = true;
 				}
 			);
 		}

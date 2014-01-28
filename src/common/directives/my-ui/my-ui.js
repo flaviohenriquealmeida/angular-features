@@ -29,4 +29,18 @@ angular.module('myUi', [])
 		transclude: true,
 		templateUrl:  '../common/directives/my-ui/my-navbar.html'
 	}
+}).directive('myFocus', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			focus: '=focus'
+		},
+		link: function(scope, element, attrs) {
+			scope.$watch('focus', function() {
+				if (scope.focus) {
+					element.focus();
+				}	
+			});
+		}
+	}
 });
