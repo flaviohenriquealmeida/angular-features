@@ -10,6 +10,15 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
+		concurrent: {
+			dev: {
+				tasks: ['nodemon', 'watch'],
+				options: {
+					logConcurrentOutput: true
+				}
+			},
+		},
+	
 		nodemon: {
 			dev: {
 				options: {
@@ -18,7 +27,7 @@ module.exports = function(grunt) {
 					env: {
 						PORT: '3000'
 					},
-					watchedFolders: ['server']
+					watchedFolders: ['server'],
 				}
 			}
 		},
@@ -31,18 +40,9 @@ module.exports = function(grunt) {
 			all: {
 				files: ['src/**/*']
 			}
-		},
-
-		parallel: {
-			mix: {
-				tasks: [
-					{ grunt: true, args: ['nodemon']}, 
-					{ grunt: true, args: ['watch']}
-				]
-			}
 		}
 	});
 
-	grunt.registerTask('server', ['parallel']);
+	grunt.registerTask('server', ['concurrent']);
 
 }
