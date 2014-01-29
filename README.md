@@ -37,4 +37,3 @@ To run karma tests, inside `angular-features` folder run:
 ##TODO
 - increase test coverage
 - $cookieStorage example
-- 
