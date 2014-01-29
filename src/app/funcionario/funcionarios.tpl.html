@@ -5,7 +5,7 @@
 
 	<label>
 		Filtro
-		<input ng-model="search.text" type="search">
+		<input ng-model="search.text" type="search" ng-keyup="keepLastSearch(search.text)">
 		<span class="glyphicon glyphicon-search"></span>
 	</label>
 

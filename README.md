@@ -7,12 +7,13 @@ Angular Features is a very small CRUD project that shows what [Angularjs](http:/
 - custom directives showing nice aspects of this component technology
 - output format using build-in filters
 - one and two-way data binding (ng-bind vs ng-model)
-- arbitrary navigation from controllers
-- route creation and redirects 
+- arbitrary navigation from controllers ($location)
+- route creation and redirects ($routeProvider)
 - locale handling
 - module creation
 - code organization
 - Karma test runner
+- $cookieStore
 
 ##Pre-requisites
 

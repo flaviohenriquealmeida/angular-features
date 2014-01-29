@@ -19,6 +19,7 @@ module.exports = function(config) {
     '../src/vendor/angular-animate/angular-animate.js',
     '../src/vendor/angular-resource/angular-resource.js',
     '../src/vendor/angular-route/angular-route.js',
+    '../src/vendor/angular-cookies/angular-cookies.js',
     '../src/app/app.js',
     '../src/app/funcionario/**/*.js',
     '../src/common/resources/**/*.js',
