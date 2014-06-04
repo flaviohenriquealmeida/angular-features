@@ -37,4 +37,4 @@ To run karma tests, inside `angular-features` folder run:
 
 ##TODO
 - increase test coverage
-- $cookieStorage example
+- wait for Angular 1.3 release and then update project
